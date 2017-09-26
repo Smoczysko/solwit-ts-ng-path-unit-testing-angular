@@ -1,0 +1,11 @@
+md-toolbar span {
+    margin-right: 16px;
+}
+
+md-toolbar a[md-button] {
+    margin: 0 8px;
+    height: 64px;
+    line-height: 64px;
+    border-radius: 0;
+    text-transform: uppercase;
+}

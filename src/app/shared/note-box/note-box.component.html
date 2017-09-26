@@ -1,0 +1,14 @@
+<md-input-container>
+  <textarea mdInput
+    [(ngModel)]="value"
+    type="text"
+    placeholder="Add note..."
+  ></textarea>
+</md-input-container>
+
+<button 
+  (click)="onSave()"
+  md-button 
+  color="primary">
+    Save
+  </button>

@@ -1,0 +1,17 @@
+<app-beers-search
+  [(phrase)]="searchPhrase"
+></app-beers-search>
+
+<app-loading *ngIf="!beers"></app-loading>
+
+<app-beers-list *ngIf="beers"
+  [beers]="beers"
+  [favouriteBeers]="favouriteBeers"
+  [showFavouriteActions]="true"
+  [isAddToFavouriteActive]="true"
+  (addFavouriteBeer)="addFavouriteBeer($event)"
+></app-beers-list>
+
+<p *ngIf="beers?.length === 0" class="empty-list">
+  No results found.
+</p>

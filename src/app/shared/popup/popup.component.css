@@ -1,0 +1,24 @@
+:host {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+}
+
+md-card > md-card-title /deep/ h6 {
+    margin: 0;
+}
+
+md-card md-card-content /deep/ p {
+    margin: 0;
+}
+
+md-card-actions {
+    text-align: right;
+}

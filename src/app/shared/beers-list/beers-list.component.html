@@ -1,0 +1,25 @@
+<md-nav-list>
+  <md-list-item *ngFor="let beer of beersToDisplay" 
+    [routerLink]="['/details/', beer.id, additionalParams]">
+    <img md-list-icon [src]="beer.imageUrl" />
+    <h4 md-line>
+      {{ beer.name }}
+
+      <button md-icon-button 
+        [disabled]="!isRemoveFromFavouriteActive" 
+        *ngIf="showFavouriteActions && isFavourite(beer)"
+        (click)="removeFromFaovurite(beer); preventNavigation($event)">
+        <md-icon>star</md-icon>
+      </button>
+      
+      <button md-icon-button 
+        [disabled]="!isAddToFavouriteActive" 
+        *ngIf="showFavouriteActions && !isFavourite(beer)"
+        (click)="addToFavourite(beer); preventNavigation($event)">
+        <md-icon>star_border</md-icon>
+      </button>
+
+    </h4>
+    <p md-line> {{ beer.description | cutWords: 80 }}</p>
+  </md-list-item>
+</md-nav-list>

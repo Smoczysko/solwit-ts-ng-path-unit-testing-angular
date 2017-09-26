@@ -1,0 +1,30 @@
+<app-loading *ngIf="!beers"></app-loading>
+
+<app-beers-list *ngIf="beers"
+  [beers]="beers"
+  [favouriteBeers]="beers"
+  [showFavouriteActions]="true"
+  [isRemoveFromFavouriteActive]="true"
+  [backUrl]="'/favourite'"
+  (removeFromFavouriteBeer)="removeFromFavourite($event)"
+></app-beers-list>
+
+<p *ngIf="beers?.length === 0" class="empty-list">
+  No results found.
+</p>
+
+<app-popup *ngIf="beerToRemove">
+  <h6>Remove favourite beer: {{ beerToRemove?.name }}</h6>
+
+  <p>Are you sure you want to remove this beer from favourites?</p>
+
+  <button md-button color="primary"
+    (click)="onRemoveFavouriteCancel()">
+    Cancel
+  </button>
+
+  <button md-button color="accent"
+    (click)="onRemoveFavouriteAccept()">
+    Yes, remove
+  </button>
+</app-popup>

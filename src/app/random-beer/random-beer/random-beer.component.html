@@ -1,0 +1,5 @@
+<app-loading *ngIf="!beer"></app-loading>
+
+<app-beer-card *ngIf="beer"
+  [beer]="beer"
+></app-beer-card>

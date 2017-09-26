@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 16px;
+}
+
+md-input-container {
+    flex-grow: 1;
+}
+
+md-icon {
+    flex-grow: 0;
+    margin-right: 8px;
+}

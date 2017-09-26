@@ -1,0 +1,15 @@
+<md-card>
+  <md-card-header>
+    <md-card-title>{{ beer.name }}</md-card-title>
+    <md-card-subtitle>{{ beer.tagline }}</md-card-subtitle>
+  </md-card-header>
+  <div md-card-image [ngStyle]="{'background-image': 'url(' + beer.imageUrl + ')'}"></div>
+  <md-card-content>
+    <p>
+      {{ beer.description }}
+    </p>
+    <p>
+      {{ beer.brewersTips }}
+    </p>
+  </md-card-content>
+</md-card>

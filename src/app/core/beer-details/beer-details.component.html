@@ -1,0 +1,17 @@
+<div class="actions">
+  <a md-button [routerLink]="backUrl">
+    <md-icon>arrow_back</md-icon>
+    Back to beers list
+  </a>
+</div>
+
+<app-loading *ngIf="!beer"></app-loading>
+
+<app-beer-card *ngIf="beer"
+  [beer]="beer"
+></app-beer-card>
+
+<app-note-box *ngIf="beer"
+  [(note)]="beerNote"
+  (save)="onSaveNote()"
+></app-note-box>
